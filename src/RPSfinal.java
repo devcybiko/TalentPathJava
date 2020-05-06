@@ -39,7 +39,6 @@ public class RPSfinal {
              !userHand.equals(STOP);
              userHand = getUserThrow())
         {
-            if (userHand == null) continue;
             String myHand = getComputerThrow();
             String combined = userHand + myHand; // not entirely easy to understand
             if (compareThrows(userHand, myHand)) { // concise if statement
@@ -59,23 +58,29 @@ public class RPSfinal {
     private static boolean compareThrows(String userHand, String myHand) {
         String combined = userHand + myHand;
         int result = Arrays.binarySearch(winners, combined);
+        print(winners);
+        print(result);
+
         return result >= 0;
     }
 
+    private static void print(Object o) {
+        System.out.println(o);
+    }
     private static void showScore(int win, int lose, int draw, String s, String s2) {
         System.out.println(s);
         System.out.println(s2 + win + " lose: " + lose + " draw: " + draw); // this looks familiar
     }
 
     private static String getComputerThrow() {
-        int rnd = myRandom(0, GUESSES.length());
-        String myHand = "rps".substring(rnd, rnd + 1); // notice scoping here - also, a bit obtuse
+        int rnd = myRandom(0, GUESSES.length()-1);
+        String myHand = GUESSES.substring(rnd, rnd + 1); // notice scoping here - also, a bit obtuse
         System.out.println("I throw > " + myHand);
         return myHand;
     }
 
     private static int myRandom(int min, int max) {
-        return (int) Math.floor(Math.random() * (max - min + 1)) + min;
+        return (int) Math.floor(Math.random() * (max - min)) + min;
     }
 
     private static String getUserThrow() {
@@ -83,7 +88,7 @@ public class RPSfinal {
         System.out.print("Throw one of " + GUESSES + "> ");
 
         String userHand = getUserThrowNormalized();
-        while (userHand == STOP && !GUESSES.contains(userHand)) { // good edit checks, concise albeit a bit obtuse
+        while (!userHand.equals(STOP) && !GUESSES.contains(userHand)) { // good edit checks, concise albeit a bit obtuse
             System.out.println("\nPlease enter a valid throw");
             System.out.println("\nLet's play RPS"); // this looks familiar
             System.out.print("Throw one of 'rps' > ");// this looks familiar
