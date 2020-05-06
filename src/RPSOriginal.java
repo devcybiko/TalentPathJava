@@ -28,7 +28,7 @@ public class RPSOriginal {
         int lose = 0;
         int draw = 0;
 
-        System.out.println("\nLet's play RPS");
+        System.out.println("\nLet's play RPS!");
         System.out.print("Throw one of 'rps' > ");
         String userHand = scanner.nextLine(); // what if they enter stop?
 
