@@ -43,6 +43,10 @@ public class Maze {
     public void printMap() {
         printMap(myMap);
     }
+    public void printSolution() {
+        printMap(solution);
+    } // added by GLS
+    public void moveTo(int _row, int _col) {row=_row; col=_col; myMap[row][col]='x';} // added by GLS
 
     private void printMap(char[][] map) {
         for (int i = 0; i < 20; i++) {
@@ -297,7 +301,7 @@ public class Maze {
         solution[6][4] = '0';
         solution[15][4] = '0';
         solution[9][10] = '0';
-        solution[13][17] = '0';
+        //solution[13][17] = '0';
         solution[13][15] = '0';
         solution[18][10] = '0';
     }
