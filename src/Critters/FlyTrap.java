@@ -1,7 +1,6 @@
 // This defines a simple class of critters that infect whenever they can and
 // otherwise just spin around, looking for critters to infect.  This simple
 // strategy turns out to be surpisingly successful.
-
 package Critters;
 
 import java.awt.*;

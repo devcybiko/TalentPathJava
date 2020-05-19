@@ -23,6 +23,7 @@
 //     public boolean backThreat();           threatening critter in back?
 //     public boolean leftThreat();           threatening critter to the left?
 //     public boolean rightThreat();          threatening critter to the right?
+
 package Critters;
 
 import java.awt.*;

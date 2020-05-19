@@ -1,5 +1,4 @@
 // Class CritterModel keeps track of the state of the critter simulation.
-
 package Critters;
 
 import java.util.*;

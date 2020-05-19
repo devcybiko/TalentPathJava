@@ -1,6 +1,5 @@
 // This defines a simple class of critters that sit around waiting to be
 // taken over by other critters.
-
 package Critters;
 
 import java.awt.*;

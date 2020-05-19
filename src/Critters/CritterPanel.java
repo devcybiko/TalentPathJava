@@ -1,5 +1,4 @@
 // Class CritterPanel displays a grid of critters
-
 package Critters;
 
 import javax.swing.*;
